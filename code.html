@@ -1,0 +1,1140 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Aditya Golhar | Cloud Engineer &amp; Backend Developer</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Space Grotesk, Caveat (handwritten), Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- BEGIN: Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            graphite: {
+              950: '#07090e',
+              900: '#0b0f17',
+              850: '#101522',
+              800: '#161c2c',
+              700: '#222b40',
+              600: '#2e3a54'
+            },
+            amberLamp: {
+              300: '#ffe8a8',
+              400: '#ffd074',
+              500: '#f59e0b',
+              glow: '#ffbe3b'
+            },
+            wood: {
+              800: '#2b1b14',
+              900: '#1b120c'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            hand: ['Caveat', 'cursive']
+          },
+          boxShadow: {
+            'glow-amber': '0 0 45px -5px rgba(255, 190, 59, 0.25)',
+            'glow-cyan': '0 0 35px -5px rgba(56, 189, 248, 0.2)',
+            'card-depth': '0 10px 30px -10px rgba(0, 0, 0, 0.8), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- END: Tailwind Configuration -->
+<!-- BEGIN: Custom Atmospheric Styles -->
+<style data-purpose="atmospheric-lighting">
+    body {
+      background-color: #080b11;
+      color: #e2e8f0;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 80% 15%, rgba(245, 158, 11, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 10% 40%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+    }
+
+    /* Ambient Warm Glow Effect on Glass */
+    .lamp-glow-overlay {
+      background: radial-gradient(ellipse at center, rgba(255, 190, 59, 0.15) 0%, rgba(255, 190, 59, 0.03) 40%, transparent 70%);
+    }
+
+    /* Chalkboard texture */
+    .chalkboard-bg {
+      background-color: #17221e;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+      background-size: 20px 20px;
+    }
+
+    /* Subtle grid line for blueprints */
+    .blueprint-grid {
+      background-image: linear-gradient(to right, rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    /* Isometric & 3D button feel */
+    .tactile-btn {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    }
+    .tactile-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    }
+
+    /* 3D Tile effect for tools */
+    .tech-tile {
+      background: linear-gradient(145deg, #181f2f, #121723);
+      box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+      transition: all 0.25s ease;
+    }
+    .tech-tile:hover {
+      transform: translateY(-4px) scale(1.03);
+      border-color: rgba(245, 158, 11, 0.5);
+      box-shadow: 0 12px 25px -5px rgba(245, 158, 11, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    }
+  </style>
+<!-- END: Custom Atmospheric Styles -->
+</head>
+<body class="font-sans antialiased text-slate-300 selection:bg-amber-500 selection:text-black">
+<!-- BEGIN: Floating Navigation Bar -->
+<header class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none" data-purpose="site-navigation">
+<nav class="pointer-events-auto max-w-5xl w-full bg-graphite-900/85 backdrop-blur-md border border-slate-700/60 rounded-full py-2.5 px-5 flex items-center justify-between shadow-2xl shadow-black/80">
+<!-- Brand Logo Badge -->
+<a class="flex items-center gap-3 group" href="#hero">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 via-amber-500 to-yellow-300 flex items-center justify-center font-heading font-extrabold text-graphite-950 text-base shadow-lg shadow-amber-500/30 group-hover:scale-105 transition-transform">
+          AG
+        </div>
+<div class="hidden sm:block leading-tight">
+<span class="block text-xs uppercase tracking-wider font-semibold text-slate-400">Portfolio</span>
+<span class="block text-sm font-heading font-bold text-white group-hover:text-amber-400 transition-colors">Aditya Golhar</span>
+</div>
+</a>
+<!-- Navigation Links -->
+<ul class="flex items-center gap-1 sm:gap-2 text-xs md:text-sm font-medium text-slate-300">
+<li><a class="px-3 py-1.5 rounded-full hover:text-amber-400 hover:bg-slate-800/60 transition-colors" href="#hero">Home</a></li>
+<li><a class="px-3 py-1.5 rounded-full hover:text-amber-400 hover:bg-slate-800/60 transition-colors" href="#about">About</a></li>
+<li><a class="px-3 py-1.5 rounded-full hover:text-amber-400 hover:bg-slate-800/60 transition-colors" href="#journey">Journey</a></li>
+<li><a class="px-3 py-1.5 rounded-full hover:text-amber-400 hover:bg-slate-800/60 transition-colors" href="#toolkit">Toolkit</a></li>
+<li><a class="px-3 py-1.5 rounded-full hover:text-amber-400 hover:bg-slate-800/60 transition-colors" href="#projects">Projects</a></li>
+<li><a class="px-3 py-1.5 rounded-full hover:text-amber-400 hover:bg-slate-800/60 transition-colors" href="#cloud">Cloud</a></li>
+</ul>
+<!-- Motto / Quick Action Button -->
+<div class="flex items-center gap-3">
+<span class="hidden lg:inline-block font-hand text-amber-300 text-lg tracking-wide transform -rotate-2">
+          "Good Code Good Life"
+        </span>
+<a class="tactile-btn bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-graphite-950 font-bold text-xs uppercase tracking-wider px-4 py-2 rounded-full shadow-md" href="#contact">
+          Contact
+        </a>
+</div>
+</nav>
+</header>
+<!-- END: Floating Navigation Bar -->
+<!-- BEGIN: Hero Section -->
+<section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden min-h-[95vh] flex items-center" data-purpose="hero-banner" id="hero">
+<!-- Ambient Warm Filament Glow Elements -->
+<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/3 left-10 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Hero Text Details (Left Side) -->
+<div class="lg:col-span-6 z-10 space-y-6 text-center lg:text-left">
+<!-- Availability & Location Badges -->
+<div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+<span class="inline-flex items-center gap-1.5 bg-graphite-850/90 border border-slate-700/80 px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-300 shadow-sm">
+<i class="w-3.5 h-3.5 text-amber-400" data-lucide="map-pin"></i>
+              Surat, Gujarat, India
+            </span>
+<span class="inline-flex items-center gap-2 bg-emerald-950/70 border border-emerald-700/50 px-3.5 py-1.5 rounded-full text-xs font-medium text-emerald-300">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+              Open to Opportunities
+            </span>
+</div>
+<!-- Main Intro Headings -->
+<div class="space-y-2">
+<p class="text-amber-400 font-heading text-lg font-semibold tracking-wide">Hey! 👋</p>
+<h1 class="text-4xl sm:text-5xl xl:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight">
+              I'm Aditya Golhar.
+            </h1>
+<p class="text-lg sm:text-xl font-medium text-amber-300/90 font-heading pt-1">
+              Cloud Engineer <span class="text-slate-500">|</span> DevOps <span class="text-slate-500">|</span> Backend Developer
+            </p>
+</div>
+<!-- Bio Paragraph -->
+<p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Building systems from code to cloud. A curious developer who turns ideas into real-world solutions through reliable infrastructure and elegant backend architectures.
+          </p>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+<a class="tactile-btn inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-graphite-950 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 text-sm tracking-wide" href="#projects">
+<span>Explore My World</span>
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</a>
+<a class="tactile-btn inline-flex items-center gap-2 bg-graphite-800/90 hover:bg-graphite-700/90 border border-slate-700 text-white font-semibold px-6 py-3.5 rounded-xl text-sm backdrop-blur-sm" href="#journey">
+<i class="w-4 h-4 text-amber-400" data-lucide="play-circle"></i>
+<span>Watch Intro</span>
+</a>
+</div>
+<!-- Whimsical Character Quote Signature -->
+<div class="pt-4 flex items-center justify-center lg:justify-start gap-3">
+<div class="h-0.5 w-8 bg-amber-500/40"></div>
+<p class="font-hand text-2xl text-amber-200 tracking-wide">
+              "Better Systems, Brighter Tomorrows"
+            </p>
+</div>
+</div>
+<!-- 3D Cinematic Diorama Simulation (Right Side) -->
+<div class="lg:col-span-6 relative">
+<!-- Stylized Multi-Screen Dev Workspace Card -->
+<div class="relative mx-auto max-w-lg bg-gradient-to-b from-graphite-850 to-graphite-900 border border-slate-700/70 rounded-3xl p-6 shadow-2xl shadow-black">
+<!-- Warm Lamp Lighting Simulation Source -->
+<div class="absolute -top-6 -right-6 w-24 h-24 bg-amber-400/30 rounded-full blur-2xl"></div>
+<div class="absolute -top-3 right-6 flex items-center gap-2 bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs px-3 py-1 rounded-full backdrop-blur-md">
+<i class="w-3.5 h-3.5 text-amber-400 animate-pulse" data-lucide="sun"></i>
+<span>2700K Cozy Studio</span>
+</div>
+<!-- Anime & Big Dreams Wall Frame -->
+<div class="mb-4 bg-wood-900/60 border border-amber-900/40 rounded-xl p-3 text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-amber-500/5 to-transparent"></div>
+<p class="font-hand text-xl text-amber-200 tracking-wide leading-tight">
+                "A Developer who loves Anime, Travel, Cloud and Big Dreams."
+              </p>
+</div>
+<!-- Simulated Glowing Multi-Monitors Setup -->
+<div class="grid grid-cols-12 gap-3 my-3">
+<!-- Left Code Monitor -->
+<div class="col-span-7 bg-graphite-950 border border-sky-500/40 rounded-xl p-3 shadow-inner shadow-sky-950/50 relative">
+<div class="flex items-center justify-between border-b border-slate-800 pb-1.5 mb-2">
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+</div>
+<span class="text-[10px] text-sky-400 font-mono">terminal: bash</span>
+</div>
+<div class="space-y-1 font-mono text-[11px] text-slate-400">
+<p class="text-sky-300 font-semibold">$ terraform apply</p>
+<p class="text-emerald-400">✓ aws_vpc.main: Created</p>
+<p class="text-emerald-400">✓ k8s_cluster: Running</p>
+<p class="text-amber-300 font-hand text-sm pt-1"># Ideas to Infrastructure</p>
+</div>
+</div>
+<!-- Right Metric / Live Status Monitor -->
+<div class="col-span-5 bg-graphite-950 border border-amber-500/40 rounded-xl p-3 shadow-inner flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-[10px] text-amber-300/80 mb-2 border-b border-slate-800 pb-1">
+<span>STATUS</span>
+<span class="text-emerald-400 font-bold">100% UP</span>
+</div>
+<div class="space-y-1.5">
+<div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-amber-400 rounded-full w-4/5"></div>
+</div>
+<div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-sky-400 rounded-full w-2/3"></div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-800/80 text-[10px] text-slate-400 flex items-center justify-between">
+<span>Containers</span>
+<span class="text-amber-400 font-mono">14 Active</span>
+</div>
+</div>
+</div>
+<!-- Desk Elements: Bookshelf, Coffee Cup, Mascot, Puppy -->
+<div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+<!-- Physical Mini Books Stack -->
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-1 bg-wood-800 border border-amber-900/60 rounded text-[11px] text-amber-200 font-mono">Linux</span>
+<span class="px-2 py-1 bg-sky-950 border border-sky-800/60 rounded text-[11px] text-sky-200 font-mono">Docker</span>
+<span class="px-2 py-1 bg-amber-950 border border-amber-800/60 rounded text-[11px] text-amber-300 font-mono">AWS</span>
+</div>
+<!-- Sleeping Companion Badge -->
+<div class="flex items-center gap-2 bg-amber-950/40 border border-amber-600/30 px-3 py-1 rounded-full text-amber-200">
+<span class="text-sm">🐕</span>
+<span class="text-[11px] font-medium">Cozy Studio Dog</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: About Me Section -->
+<section class="py-20 bg-graphite-900/60 border-t border-b border-slate-800/80 relative" data-purpose="about-section" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Left Column: Biography & Quick Facts -->
+<div class="lg:col-span-7 bg-graphite-850/90 border border-slate-700/70 rounded-3xl p-8 flex flex-col justify-between shadow-xl">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+<p class="text-xs uppercase tracking-widest font-bold text-amber-400">Personal Background</p>
+</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white mb-2">About Me</h2>
+<p class="text-base text-slate-400 font-medium mb-6">More than just code.</p>
+<p class="text-slate-300 text-base leading-relaxed mb-8">
+              I'm <strong class="text-white font-semibold">Aditya Ravindra Golhar</strong>, a developer who loves building robust systems, exploring cloud infrastructure, and understanding how technology works beneath the surface. I started with web development and gradually moved towards backend architecture, Linux systems engineering, container orchestration, and cloud automation.
+            </p>
+<!-- Quick Fact List -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+<div class="flex items-start gap-3.5 p-3.5 bg-graphite-900/80 border border-slate-800 rounded-xl">
+<div class="p-2 bg-amber-500/10 rounded-lg text-amber-400">
+<i class="w-5 h-5" data-lucide="map-pin"></i>
+</div>
+<div>
+<h4 class="text-xs text-slate-400 font-medium">Location</h4>
+<p class="text-sm font-semibold text-white">Surat, Gujarat, India</p>
+</div>
+</div>
+<div class="flex items-start gap-3.5 p-3.5 bg-graphite-900/80 border border-slate-800 rounded-xl">
+<div class="p-2 bg-sky-500/10 rounded-lg text-sky-400">
+<i class="w-5 h-5" data-lucide="award"></i>
+</div>
+<div>
+<h4 class="text-xs text-slate-400 font-medium">Undergraduate</h4>
+<p class="text-sm font-semibold text-white">Diploma in Information Tech</p>
+</div>
+</div>
+<div class="flex items-start gap-3.5 p-3.5 bg-graphite-900/80 border border-slate-800 rounded-xl">
+<div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+<i class="w-5 h-5" data-lucide="graduation-cap"></i>
+</div>
+<div>
+<h4 class="text-xs text-slate-400 font-medium">Degree</h4>
+<p class="text-sm font-semibold text-white">Pursuing B.E. (GTU)</p>
+</div>
+</div>
+<div class="flex items-start gap-3.5 p-3.5 bg-graphite-900/80 border border-slate-800 rounded-xl">
+<div class="p-2 bg-purple-500/10 rounded-lg text-purple-400">
+<i class="w-5 h-5" data-lucide="zap"></i>
+</div>
+<div>
+<h4 class="text-xs text-slate-400 font-medium">Philosophy</h4>
+<p class="text-sm font-semibold text-white">Always learning, always building</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Whimsical Diorama Badge -->
+<div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between">
+<span class="font-hand text-2xl text-amber-300">
+              "Same Guy... Bigger Dreams..."
+            </span>
+<span class="text-xs text-slate-500 font-mono">EST. 2019 → INFINITY</span>
+</div>
+</div>
+<!-- Right Column: Interactive Currently Chalkboard -->
+<div class="lg:col-span-5 chalkboard-bg border-4 border-wood-800 rounded-3xl p-8 shadow-2xl relative flex flex-col justify-between">
+<!-- Chalk Dust Corner Accents -->
+<div class="absolute top-2 right-4 text-xs font-mono text-slate-500 uppercase">Board #01</div>
+<div>
+<div class="flex items-center justify-between border-b border-white/20 pb-4 mb-6">
+<h3 class="text-2xl font-hand font-bold text-amber-200 tracking-wider">
+                Currently:
+              </h3>
+<i class="w-5 h-5 text-amber-300/80" data-lucide="clipboard-list"></i>
+</div>
+<!-- Hand-written Style Checklist -->
+<ul class="space-y-4 font-hand text-2xl text-slate-100">
+<li class="flex items-center gap-3">
+<span class="w-6 h-6 rounded border-2 border-amber-300 flex items-center justify-center text-amber-300 text-base font-bold bg-white/5">✓</span>
+<span>Learning AWS Solutions Architecture</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-6 h-6 rounded border-2 border-amber-300 flex items-center justify-center text-amber-300 text-base font-bold bg-white/5">✓</span>
+<span>Building Cool Open-Source Projects</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-6 h-6 rounded border-2 border-amber-300 flex items-center justify-center text-amber-300 text-base font-bold bg-white/5">✓</span>
+<span>Watching Inspiring Anime</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-6 h-6 rounded border-2 border-amber-300 flex items-center justify-center text-amber-300 text-base font-bold bg-white/5">✓</span>
+<span>Planning for Travel to Japan ⛩️</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-6 h-6 rounded border-2 border-amber-300 flex items-center justify-center text-amber-300 text-base font-bold bg-white/5">✓</span>
+<span>Becoming a better version of myself :)</span>
+</li>
+</ul>
+</div>
+<!-- Bottom Cozy Chalk Footer -->
+<div class="pt-8 text-right">
+<span class="font-hand text-xl text-amber-300/70">
+              - Keep coding with heart.
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: About Me Section -->
+<!-- BEGIN: My Journey Section -->
+<section class="py-24 relative overflow-hidden" data-purpose="milestones-timeline" id="journey">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold uppercase tracking-wider">
+          Milestones
+        </div>
+<h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-white">My Journey</h2>
+<p class="text-slate-400 text-base sm:text-lg">
+          A path of curiosity, learning, and continuous building.
+        </p>
+<p class="font-hand text-2xl text-amber-300 pt-1">"Still Learning... Still Building..."</p>
+</div>
+<!-- Chronological Stepping Stones Diorama Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 items-stretch relative">
+<!-- Step 1 -->
+<div class="bg-graphite-850 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-lg">
+<div class="h-10 w-10 mx-auto rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3">
+<i class="w-5 h-5" data-lucide="terminal"></i>
+</div>
+<div>
+<span class="text-xs font-bold font-mono text-amber-400 block mb-1">2019</span>
+<h4 class="text-sm font-bold text-white mb-1">Started</h4>
+<p class="text-[11px] text-slate-400 leading-tight">First lines of code written &amp; sparked love for logic.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-slate-800/80 text-[10px] text-slate-500 uppercase tracking-wider">Origin</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-graphite-850 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-lg">
+<div class="h-10 w-10 mx-auto rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center mb-3">
+<i class="w-5 h-5" data-lucide="layout"></i>
+</div>
+<div>
+<span class="text-xs font-bold font-mono text-sky-400 block mb-1">Web Dev</span>
+<h4 class="text-sm font-bold text-white mb-1">Frontend Base</h4>
+<p class="text-[11px] text-slate-400 leading-tight">Mastered HTML, CSS, JavaScript, interactive UI.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-slate-800/80 text-[10px] text-slate-500 uppercase tracking-wider">UI / Client</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-graphite-850 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-lg">
+<div class="h-10 w-10 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-3">
+<i class="w-5 h-5" data-lucide="database"></i>
+</div>
+<div>
+<span class="text-xs font-bold font-mono text-emerald-400 block mb-1">Backend</span>
+<h4 class="text-sm font-bold text-white mb-1">&amp; Databases</h4>
+<p class="text-[11px] text-slate-400 leading-tight">APIs, SQL schemas, data integrity &amp; servers.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-slate-800/80 text-[10px] text-slate-500 uppercase tracking-wider">Server Side</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-graphite-850 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-lg">
+<div class="h-10 w-10 mx-auto rounded-full bg-yellow-500/20 text-yellow-400 flex items-center justify-center mb-3">
+<span class="font-bold text-sm">🐧</span>
+</div>
+<div>
+<span class="text-xs font-bold font-mono text-yellow-400 block mb-1">Linux</span>
+<h4 class="text-sm font-bold text-white mb-1">&amp; Systems</h4>
+<p class="text-[11px] text-slate-400 leading-tight">Deep dive into kernel, shell scripts, POSIX &amp; configs.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-slate-800/80 text-[10px] text-slate-500 uppercase tracking-wider">Core OS</div>
+</div>
+<!-- Step 5 -->
+<div class="bg-graphite-850 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-lg">
+<div class="h-10 w-10 mx-auto rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center mb-3">
+<i class="w-5 h-5" data-lucide="box"></i>
+</div>
+<div>
+<span class="text-xs font-bold font-mono text-blue-400 block mb-1">Docker</span>
+<h4 class="text-sm font-bold text-white mb-1">&amp; Containers</h4>
+<p class="text-[11px] text-slate-400 leading-tight">Microservices packaging and clean isolation.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-slate-800/80 text-[10px] text-slate-500 uppercase tracking-wider">DevOps</div>
+</div>
+<!-- Step 6 -->
+<div class="bg-graphite-850 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between text-center hover:border-amber-500/40 transition-all hover:-translate-y-1 shadow-lg">
+<div class="h-10 w-10 mx-auto rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3">
+<i class="w-5 h-5" data-lucide="cloud"></i>
+</div>
+<div>
+<span class="text-xs font-bold font-mono text-amber-400 block mb-1">Cloud</span>
+<h4 class="text-sm font-bold text-white mb-1">AWS Infra</h4>
+<p class="text-[11px] text-slate-400 leading-tight">EC2, VPCs, S3, IAM, serverless &amp; scale.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-slate-800/80 text-[10px] text-slate-500 uppercase tracking-wider">Infrastructure</div>
+</div>
+<!-- Step 7 -->
+<div class="bg-gradient-to-b from-amber-500/20 to-graphite-850 border border-amber-500/60 rounded-2xl p-4 flex flex-col justify-between text-center shadow-amber-500/10 shadow-lg hover:-translate-y-1 transition-all">
+<div class="h-10 w-10 mx-auto rounded-full bg-amber-400 text-graphite-950 flex items-center justify-center mb-3 font-bold">
+<i class="w-5 h-5" data-lucide="compass"></i>
+</div>
+<div>
+<span class="text-xs font-bold font-mono text-amber-300 block mb-1">Future</span>
+<h4 class="text-sm font-bold text-white mb-1">Bigger Systems</h4>
+<p class="text-[11px] text-slate-300 leading-tight">Distributed systems, Kubernetes, CI/CD pipelines.</p>
+</div>
+<div class="mt-4 pt-2 border-t border-amber-500/30 text-[10px] text-amber-400 font-bold uppercase tracking-wider">Next Stop</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: My Journey Section -->
+<!-- BEGIN: My Toolkit Section -->
+<section class="py-20 bg-graphite-900/70 border-t border-b border-slate-800" data-purpose="technology-stack" id="toolkit">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Toolkit Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="text-xs uppercase font-bold tracking-widest text-amber-400">Capabilities</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">My Toolkit</h2>
+<p class="text-slate-400 text-sm sm:text-base mt-1">Technologies I work with, build upon, and explore.</p>
+</div>
+<!-- Wooden Board Motto -->
+<div class="bg-wood-900 border-2 border-wood-800 rounded-xl px-5 py-2.5 shadow-md flex items-center gap-3">
+<span class="text-2xl">🤖</span>
+<p class="font-hand text-xl text-amber-200">
+            "Tools don't make a developer. Curiosity does."
+          </p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- 3D Tactile Tech Tiles (18 items) -->
+<div class="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5">
+<!-- Java -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5">☕</span>
+<span class="text-xs font-semibold text-white">Java</span>
+<span class="text-[10px] text-slate-400 font-mono">OOP &amp; Backend</span>
+</div>
+<!-- Python -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5">🐍</span>
+<span class="text-xs font-semibold text-white">Python</span>
+<span class="text-[10px] text-slate-400 font-mono">Scripting &amp; APIs</span>
+</div>
+<!-- JavaScript -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-yellow-400 font-bold font-mono">JS</span>
+<span class="text-xs font-semibold text-white">JavaScript</span>
+<span class="text-[10px] text-slate-400 font-mono">Full-Stack Core</span>
+</div>
+<!-- TypeScript -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-blue-400 font-bold font-mono">TS</span>
+<span class="text-xs font-semibold text-white">TypeScript</span>
+<span class="text-[10px] text-slate-400 font-mono">Typed Systems</span>
+</div>
+<!-- PHP -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-indigo-400 font-bold font-mono">PHP</span>
+<span class="text-xs font-semibold text-white">PHP</span>
+<span class="text-[10px] text-slate-400 font-mono">Server Logic</span>
+</div>
+<!-- HTML5 -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-orange-500 font-bold">🌐</span>
+<span class="text-xs font-semibold text-white">HTML5</span>
+<span class="text-[10px] text-slate-400 font-mono">Semantic Web</span>
+</div>
+<!-- CSS3 / Tailwind -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-sky-400 font-bold">🎨</span>
+<span class="text-xs font-semibold text-white">CSS3 / Tailwind</span>
+<span class="text-[10px] text-slate-400 font-mono">Responsive UI</span>
+</div>
+<!-- Node.js -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-emerald-400 font-bold">⚡</span>
+<span class="text-xs font-semibold text-white">Node.js</span>
+<span class="text-[10px] text-slate-400 font-mono">Runtime Server</span>
+</div>
+<!-- MySQL -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-blue-400">🐬</span>
+<span class="text-xs font-semibold text-white">MySQL</span>
+<span class="text-[10px] text-slate-400 font-mono">Relational DB</span>
+</div>
+<!-- MongoDB -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-emerald-500">🍃</span>
+<span class="text-xs font-semibold text-white">MongoDB</span>
+<span class="text-[10px] text-slate-400 font-mono">NoSQL Document</span>
+</div>
+<!-- PostgreSQL -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-sky-500">🐘</span>
+<span class="text-xs font-semibold text-white">PostgreSQL</span>
+<span class="text-[10px] text-slate-400 font-mono">Advanced SQL</span>
+</div>
+<!-- Linux -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5">🐧</span>
+<span class="text-xs font-semibold text-white">Linux</span>
+<span class="text-[10px] text-slate-400 font-mono">OS &amp; Shell</span>
+</div>
+<!-- Docker -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-blue-400">🐳</span>
+<span class="text-xs font-semibold text-white">Docker</span>
+<span class="text-[10px] text-slate-400 font-mono">Containerization</span>
+</div>
+<!-- AWS -->
+<div class="tech-tile border border-amber-500/40 rounded-2xl p-4 flex flex-col items-center justify-center text-center bg-amber-500/5">
+<span class="text-2xl mb-1.5 text-amber-400">☁️</span>
+<span class="text-xs font-semibold text-amber-300">AWS</span>
+<span class="text-[10px] text-amber-400/80 font-mono">Cloud Services</span>
+</div>
+<!-- Git -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-orange-600">🌿</span>
+<span class="text-xs font-semibold text-white">Git</span>
+<span class="text-[10px] text-slate-400 font-mono">Version Control</span>
+</div>
+<!-- React -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-sky-400 animate-spin-slow">⚛️</span>
+<span class="text-xs font-semibold text-white">React</span>
+<span class="text-[10px] text-slate-400 font-mono">SPA Architecture</span>
+</div>
+<!-- React Native -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-sky-500">📱</span>
+<span class="text-xs font-semibold text-white">React Native</span>
+<span class="text-[10px] text-slate-400 font-mono">Mobile Apps</span>
+</div>
+<!-- Supabase -->
+<div class="tech-tile border border-slate-700/60 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+<span class="text-2xl mb-1.5 text-emerald-400">⚡</span>
+<span class="text-xs font-semibold text-white">Supabase</span>
+<span class="text-[10px] text-slate-400 font-mono">BaaS &amp; Auth</span>
+</div>
+</div>
+<!-- Stacked Wooden Blocks: Developer Cycle -->
+<div class="lg:col-span-3 bg-wood-900 border border-amber-900/60 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<i class="w-4 h-4 text-amber-400 animate-pulse" data-lucide="flame"></i>
+<span class="text-xs uppercase font-mono text-amber-400 tracking-wider">Dev Cycle Blocks</span>
+</div>
+<div class="space-y-2.5 text-center font-mono font-bold text-sm">
+<div class="p-2.5 rounded-xl bg-wood-800 border border-amber-800/40 text-amber-200 shadow-sm">
+                01. PLAN
+              </div>
+<div class="p-2.5 rounded-xl bg-wood-800 border border-amber-800/40 text-amber-200 shadow-sm">
+                02. CODE
+              </div>
+<div class="p-2.5 rounded-xl bg-wood-800 border border-amber-800/40 text-amber-200 shadow-sm">
+                03. BUILD
+              </div>
+<div class="p-2.5 rounded-xl bg-wood-800 border border-amber-800/40 text-amber-200 shadow-sm">
+                04. DEPLOY
+              </div>
+<div class="p-2.5 rounded-xl bg-amber-500/20 border border-amber-500/50 text-amber-300 shadow-sm">
+                05. REPEAT 🔄
+              </div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-amber-950 flex items-center justify-between text-xs text-amber-300/70">
+<span>Candlelit Focus</span>
+<span class="text-base">🕯️</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: My Toolkit Section -->
+<!-- BEGIN: Featured Projects Section -->
+<section class="py-24" data-purpose="project-gallery" id="projects">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="mb-14">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-2">
+          Portfolio Works
+        </div>
+<h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-white">Featured Projects</h2>
+<p class="text-slate-400 text-base sm:text-lg">Real projects. Real learning. Real progress.</p>
+</div>
+<!-- Project Diorama Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Project 1: Connect & Travel -->
+<article class="bg-graphite-850 border border-slate-700/80 rounded-2xl overflow-hidden shadow-card-depth flex flex-col justify-between hover:border-amber-400/50 transition-all hover:-translate-y-1">
+<div class="p-5">
+<div class="h-32 rounded-xl bg-gradient-to-tr from-cyan-950 via-slate-900 to-sky-900 border border-sky-500/20 p-3 mb-4 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  In Development
+                </span>
+<i class="w-4 h-4 text-sky-400" data-lucide="navigation"></i>
+</div>
+<p class="text-xs font-mono text-sky-300">Live GPS &amp; Safety API</p>
+</div>
+<h3 class="text-lg font-bold text-white font-heading mb-2">Connect &amp; Travel</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              A travel coordination application with real-time location sharing, emergency safety features, and trip planning sync.
+            </p>
+</div>
+<div class="p-5 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between text-xs text-slate-400">
+<span>Mobile &amp; Backend</span>
+<span class="text-amber-400 font-semibold">Active Build →</span>
+</div>
+</article>
+<!-- Project 2: Speedy Cart -->
+<article class="bg-graphite-850 border border-slate-700/80 rounded-2xl overflow-hidden shadow-card-depth flex flex-col justify-between hover:border-amber-400/50 transition-all hover:-translate-y-1">
+<div class="p-5">
+<div class="h-32 rounded-xl bg-gradient-to-tr from-amber-950 via-slate-900 to-orange-900 border border-amber-500/20 p-3 mb-4 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  In Development
+                </span>
+<i class="w-4 h-4 text-amber-400" data-lucide="shopping-bag"></i>
+</div>
+<p class="text-xs font-mono text-amber-300">Full-Stack E-Commerce</p>
+</div>
+<h3 class="text-lg font-bold text-white font-heading mb-2">Speedy Cart</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              A full-stack modern e-commerce platform with relational database integration, cart synchronization, and checkout workflow.
+            </p>
+</div>
+<div class="p-5 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between text-xs text-slate-400">
+<span>Node.js / React</span>
+<span class="text-amber-400 font-semibold">Active Build →</span>
+</div>
+</article>
+<!-- Project 3: Hindflix -->
+<article class="bg-graphite-850 border border-slate-700/80 rounded-2xl overflow-hidden shadow-card-depth flex flex-col justify-between hover:border-amber-400/50 transition-all hover:-translate-y-1">
+<div class="p-5">
+<div class="h-32 rounded-xl bg-gradient-to-tr from-rose-950 via-slate-900 to-red-900 border border-rose-500/20 p-3 mb-4 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  Completed
+                </span>
+<i class="w-4 h-4 text-rose-400" data-lucide="film"></i>
+</div>
+<p class="text-xs font-mono text-rose-300">Streaming UI / Catalog</p>
+</div>
+<h3 class="text-lg font-bold text-white font-heading mb-2">Hindflix</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              Entertainment and media web platform with dynamic movie discovery, trailer embeds, and tailored watchlist curation.
+            </p>
+</div>
+<div class="p-5 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between text-xs text-slate-400">
+<span>Web Platform</span>
+<span class="text-emerald-400 font-semibold">Live Preview →</span>
+</div>
+</article>
+<!-- Project 4: Student Management -->
+<article class="bg-graphite-850 border border-slate-700/80 rounded-2xl overflow-hidden shadow-card-depth flex flex-col justify-between hover:border-amber-400/50 transition-all hover:-translate-y-1">
+<div class="p-5">
+<div class="h-32 rounded-xl bg-gradient-to-tr from-emerald-950 via-slate-900 to-teal-900 border border-emerald-500/20 p-3 mb-4 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  Completed
+                </span>
+<i class="w-4 h-4 text-emerald-400" data-lucide="book-open"></i>
+</div>
+<p class="text-xs font-mono text-emerald-300">Database-Driven CRUD</p>
+</div>
+<h3 class="text-lg font-bold text-white font-heading mb-2">Student Management</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              Database-driven management system designed for storing, searching, and managing student academic transcripts and credentials.
+            </p>
+</div>
+<div class="p-5 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between text-xs text-slate-400">
+<span>SQL / Database</span>
+<span class="text-emerald-400 font-semibold">Finished →</span>
+</div>
+</article>
+<!-- Project 5: Student Review System -->
+<article class="bg-graphite-850 border border-slate-700/80 rounded-2xl overflow-hidden shadow-card-depth flex flex-col justify-between hover:border-amber-400/50 transition-all hover:-translate-y-1">
+<div class="p-5">
+<div class="h-32 rounded-xl bg-gradient-to-tr from-yellow-950 via-slate-900 to-amber-950 border border-amber-500/20 p-3 mb-4 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  Completed
+                </span>
+<i class="w-4 h-4 text-yellow-400" data-lucide="check-check"></i>
+</div>
+<p class="text-xs font-mono text-yellow-300">Python Auth &amp; Review</p>
+</div>
+<h3 class="text-lg font-bold text-white font-heading mb-2">Student Review System</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              User authentication and peer evaluation platform built with Python backend, password hashing, and role permission levels.
+            </p>
+</div>
+<div class="p-5 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between text-xs text-slate-400">
+<span>Python / Auth</span>
+<span class="text-emerald-400 font-semibold">Finished →</span>
+</div>
+</article>
+<!-- Project 6: Café Billing System -->
+<article class="bg-graphite-850 border border-slate-700/80 rounded-2xl overflow-hidden shadow-card-depth flex flex-col justify-between hover:border-amber-400/50 transition-all hover:-translate-y-1">
+<div class="p-5">
+<div class="h-32 rounded-xl bg-gradient-to-tr from-amber-950 via-slate-900 to-amber-900 border border-amber-600/20 p-3 mb-4 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  Completed
+                </span>
+<i class="w-4 h-4 text-amber-300" data-lucide="coffee"></i>
+</div>
+<p class="text-xs font-mono text-amber-200">Java Desktop POS</p>
+</div>
+<h3 class="text-lg font-bold text-white font-heading mb-2">Café Billing System</h3>
+<p class="text-xs text-slate-400 leading-relaxed">
+              Point of sales and invoice calculation system created using Java with tax calculations, order logs, and printable receipts.
+            </p>
+</div>
+<div class="p-5 pt-0 border-t border-slate-800/80 mt-4 flex items-center justify-between text-xs text-slate-400">
+<span>Java Engine</span>
+<span class="text-emerald-400 font-semibold">Finished →</span>
+</div>
+</article>
+<!-- Card 7: More Projects Coming Soon... -->
+<div class="bg-gradient-to-b from-graphite-850 to-graphite-900 border-2 border-dashed border-slate-700/80 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-amber-400 transition-colors">
+<div class="h-14 w-14 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3 shadow-inner">
+<i class="w-6 h-6" data-lucide="plus"></i>
+</div>
+<h3 class="text-base font-bold text-white mb-1">More Projects Coming Soon...</h3>
+<p class="text-xs text-slate-400 mb-4 max-w-xs">
+            Exploring, Learning, Building new cloud native applications.
+          </p>
+<span class="text-[11px] font-mono uppercase tracking-widest text-amber-400">Stay Tuned</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Featured Projects Section -->
+<!-- BEGIN: Cloud Engineering & Engineering Mindset Dual Section -->
+<section class="py-20 bg-graphite-900/80 border-t border-b border-slate-800" data-purpose="cloud-and-principles" id="cloud">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left: Cloud Engineering Blueprint -->
+<div class="lg:col-span-6 bg-graphite-850 border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+<span class="text-xs uppercase font-mono tracking-wider text-sky-400 font-semibold">Infrastructure View</span>
+</div>
+<h3 class="text-2xl sm:text-3xl font-extrabold font-heading text-white mb-1">Cloud Engineering</h3>
+<p class="text-sm text-slate-400 mb-6">From local development to global infrastructure.</p>
+<!-- Interactive Blueprint Architecture Diagram -->
+<div class="blueprint-grid border border-sky-500/30 bg-graphite-950/80 rounded-2xl p-6 relative overflow-hidden">
+<div class="text-right mb-4">
+<span class="font-hand text-amber-300 text-lg">"Architecture concepts I am learning and building toward."</span>
+</div>
+<!-- Visual Flow Nodes -->
+<div class="space-y-4">
+<div class="flex items-center justify-between gap-2">
+<div class="px-3 py-2 bg-graphite-800 border border-sky-400/40 rounded-lg text-center text-xs font-mono text-sky-200 shadow">
+                    Users
+                  </div>
+<div class="flex-1 border-t border-dashed border-sky-400/40 mx-2 relative">
+<span class="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[10px] text-sky-400 bg-graphite-950 px-1">HTTPS</span>
+</div>
+<div class="px-3 py-2 bg-graphite-800 border border-sky-400/40 rounded-lg text-center text-xs font-mono text-sky-200 shadow">
+                    DNS / Route 53
+                  </div>
+</div>
+<div class="flex items-center justify-center">
+<div class="w-0.5 h-6 bg-sky-400/40"></div>
+</div>
+<div class="p-3 bg-sky-950/40 border border-sky-400/60 rounded-xl text-center">
+<span class="text-xs font-mono text-sky-300 font-bold block mb-1">Load Balancer (ALB)</span>
+<p class="text-[11px] text-slate-400">Traffic distribution &amp; health monitoring</p>
+</div>
+<div class="flex items-center justify-center">
+<div class="w-0.5 h-6 bg-sky-400/40"></div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 bg-graphite-800 border border-slate-700 rounded-xl text-center">
+<span class="text-xs font-mono text-emerald-300 block font-semibold">App Servers</span>
+<span class="text-[10px] text-slate-400">EC2 Auto Scaling</span>
+</div>
+<div class="p-3 bg-graphite-800 border border-slate-700 rounded-xl text-center">
+<span class="text-xs font-mono text-amber-300 block font-semibold">Database &amp; Storage</span>
+<span class="text-[10px] text-slate-400">RDS Multi-AZ &amp; S3</span>
+</div>
+</div>
+</div>
+<!-- Diagram Annotation -->
+<div class="mt-6 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+<span>VPC Isolation</span>
+<span>CI/CD Integration</span>
+<span>CloudWatch Logs</span>
+</div>
+</div>
+</div>
+<div class="mt-6 text-xs text-slate-400 flex items-center gap-2">
+<i class="w-4 h-4 text-emerald-400" data-lucide="shield-check"></i>
+<span>Designing for high availability, fault tolerance, and zero downtime.</span>
+</div>
+</div>
+<!-- Right: Engineering Mindset (5 Principles) -->
+<div class="lg:col-span-6 bg-graphite-850 border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+<span class="text-xs uppercase font-mono tracking-wider text-amber-400 font-semibold">Philosophy</span>
+</div>
+<h3 class="text-2xl sm:text-3xl font-extrabold font-heading text-white mb-1">Engineering Mindset</h3>
+<p class="text-sm text-slate-400 mb-6">Principles that guide every architecture and line of code.</p>
+<!-- 5 Pedestal Principle Cards -->
+<div class="space-y-3">
+<!-- 1. Build -->
+<div class="flex items-start gap-3.5 p-3.5 bg-graphite-900 border border-slate-800 rounded-xl hover:border-amber-400/40 transition-colors">
+<div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center shrink-0">
+                  1
+                </div>
+<div>
+<h4 class="text-sm font-bold text-white">Build</h4>
+<p class="text-xs text-slate-400">I learn best by constructing real, functioning systems rather than just reading documentation.</p>
+</div>
+</div>
+<!-- 2. Understand -->
+<div class="flex items-start gap-3.5 p-3.5 bg-graphite-900 border border-slate-800 rounded-xl hover:border-amber-400/40 transition-colors">
+<div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center shrink-0">
+                  2
+                </div>
+<div>
+<h4 class="text-sm font-bold text-white">Understand</h4>
+<p class="text-xs text-slate-400">I want to understand how things work under the hood: kernels, networks, and memory protocols.</p>
+</div>
+</div>
+<!-- 3. Automate -->
+<div class="flex items-start gap-3.5 p-3.5 bg-graphite-900 border border-slate-800 rounded-xl hover:border-amber-400/40 transition-colors">
+<div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center shrink-0">
+                  3
+                </div>
+<div>
+<h4 class="text-sm font-bold text-white">Automate</h4>
+<p class="text-xs text-slate-400">If it can be automated reliably, it shouldn't ever be repeated manually.</p>
+</div>
+</div>
+<!-- 4. Scale -->
+<div class="flex items-start gap-3.5 p-3.5 bg-graphite-900 border border-slate-800 rounded-xl hover:border-amber-400/40 transition-colors">
+<div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 font-bold flex items-center justify-center shrink-0">
+                  4
+                </div>
+<div>
+<h4 class="text-sm font-bold text-white">Scale</h4>
+<p class="text-xs text-slate-400">Design for gradual growth, operational reliability, resilience, and clean maintainability.</p>
+</div>
+</div>
+<!-- 5. Learn -->
+<div class="flex items-start gap-3.5 p-3.5 bg-graphite-900 border border-slate-800 rounded-xl hover:border-amber-400/40 transition-colors">
+<div class="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-400 font-bold flex items-center justify-center shrink-0">
+                  5
+                </div>
+<div>
+<h4 class="text-sm font-bold text-white">Learn</h4>
+<p class="text-xs text-slate-400">Technology and frameworks change quickly. Engineering fundamentals always remain timeless.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+<span>Diorama Principles</span>
+<span class="text-amber-300 font-hand text-lg">"Progress &gt; Perfection"</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Cloud Engineering & Engineering Mindset Dual Section -->
+<!-- BEGIN: Education, GitHub & Contact Footer Section -->
+<section class="py-20 relative" data-purpose="bottom-interaction-hub" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+<!-- Left: Education Card -->
+<div class="bg-graphite-850 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<i class="w-4 h-4 text-amber-400" data-lucide="graduation-cap"></i>
+<h3 class="text-xl font-bold font-heading text-white">Education</h3>
+</div>
+<p class="text-xs text-slate-400 mb-6">My academic background.</p>
+<div class="space-y-6">
+<!-- Item 1 -->
+<div class="relative pl-6 border-l-2 border-amber-500/60">
+<span class="absolute -left-2 top-0 w-3.5 h-3.5 rounded-full bg-amber-400 border-2 border-graphite-950"></span>
+<h4 class="text-sm font-bold text-white">Diploma in Information Technology</h4>
+<p class="text-xs text-amber-300/90 font-medium">Gujarat, India</p>
+<p class="text-[11px] text-slate-400 mt-1">Foundation in computing, networking, and algorithms.</p>
+</div>
+<!-- Item 2 -->
+<div class="relative pl-6 border-l-2 border-sky-500/60">
+<span class="absolute -left-2 top-0 w-3.5 h-3.5 rounded-full bg-sky-400 border-2 border-graphite-950"></span>
+<h4 class="text-sm font-bold text-white">Pursuing Engineering</h4>
+<p class="text-xs text-sky-300/90 font-medium">Computer Science / IT</p>
+<p class="text-[11px] text-slate-400 mt-1">Gujarat Technological University (GTU)</p>
+</div>
+</div>
+</div>
+<!-- Stacked Vintage Textbooks Bookmark Accent -->
+<div class="mt-8 pt-4 border-t border-slate-800 bg-wood-900/60 rounded-xl p-3 border border-amber-900/40 flex items-center justify-between">
+<span class="font-hand text-amber-200 text-lg">"Education Today, A Better Tomorrow."</span>
+<span class="text-lg">📚</span>
+</div>
+</div>
+<!-- Middle: GitHub Activity Card -->
+<div class="bg-graphite-850 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<i class="w-4 h-4 text-amber-400" data-lucide="github"></i>
+<h3 class="text-xl font-bold font-heading text-white">GitHub</h3>
+</div>
+<span class="font-hand text-amber-300 text-lg">"Consistent Progress."</span>
+</div>
+<p class="text-xs text-slate-400 mb-4">The code behind the work.</p>
+<!-- User Meta -->
+<div class="flex items-center gap-3 p-3 bg-graphite-900 border border-slate-800 rounded-xl mb-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center font-bold text-graphite-950 text-sm">
+                AG
+              </div>
+<div>
+<h4 class="text-sm font-bold text-white">@adityarg1947</h4>
+<p class="text-[11px] text-slate-400">Building, learning &amp; exploring one commit at a time.</p>
+</div>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-3 gap-2 text-center mb-4">
+<div class="p-2 bg-graphite-900 rounded-lg border border-slate-800">
+<span class="block text-sm font-bold text-white font-mono">24</span>
+<span class="text-[10px] text-slate-400">Public Repos</span>
+</div>
+<div class="p-2 bg-graphite-900 rounded-lg border border-slate-800">
+<span class="block text-sm font-bold text-white font-mono">18</span>
+<span class="text-[10px] text-slate-400">Followers</span>
+</div>
+<div class="p-2 bg-graphite-900 rounded-lg border border-slate-800">
+<span class="block text-sm font-bold text-white font-mono">27</span>
+<span class="text-[10px] text-slate-400">Following</span>
+</div>
+</div>
+<!-- Heatmap Contribution Grid Simulation -->
+<div class="bg-graphite-900 border border-slate-800 rounded-xl p-3">
+<div class="flex justify-between text-[9px] text-slate-500 font-mono mb-1.5">
+<span>Jan</span><span>Apr</span><span>Jul</span><span>Oct</span><span>Dec</span>
+</div>
+<div class="grid grid-cols-12 gap-1">
+<div class="h-2.5 rounded-sm bg-emerald-950"></div>
+<div class="h-2.5 rounded-sm bg-emerald-500"></div>
+<div class="h-2.5 rounded-sm bg-emerald-400"></div>
+<div class="h-2.5 rounded-sm bg-emerald-900"></div>
+<div class="h-2.5 rounded-sm bg-emerald-500"></div>
+<div class="h-2.5 rounded-sm bg-emerald-400"></div>
+<div class="h-2.5 rounded-sm bg-emerald-600"></div>
+<div class="h-2.5 rounded-sm bg-emerald-300"></div>
+<div class="h-2.5 rounded-sm bg-emerald-500"></div>
+<div class="h-2.5 rounded-sm bg-emerald-400"></div>
+<div class="h-2.5 rounded-sm bg-emerald-700"></div>
+<div class="h-2.5 rounded-sm bg-emerald-400"></div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-2">
+<a class="tactile-btn w-full inline-flex items-center justify-center gap-2 bg-graphite-800 hover:bg-slate-700 text-white font-semibold text-xs py-2.5 rounded-xl border border-slate-700 transition-colors" href="https://github.com/adityarg1947" rel="noopener noreferrer" target="_blank">
+<span>View GitHub Profile</span>
+<i class="w-3.5 h-3.5 text-amber-400" data-lucide="arrow-up-right"></i>
+</a>
+</div>
+</div>
+<!-- Right: Let's Build Something & Connect -->
+<div class="bg-graphite-850 border border-slate-700/80 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<i class="w-4 h-4 text-amber-400" data-lucide="send"></i>
+<h3 class="text-xl font-bold font-heading text-white">Let's Build Something.</h3>
+</div>
+</div>
+<p class="text-xs text-slate-400 mb-6">Have a system worth building? Let's connect.</p>
+<!-- Quick Action Links Grid -->
+<div class="grid grid-cols-2 gap-3 mb-6">
+<a class="flex items-center gap-2.5 p-3 bg-graphite-900 hover:bg-graphite-800 border border-slate-800 rounded-xl text-xs font-semibold text-white transition-colors" href="https://github.com/adityarg1947" target="_blank">
+<i class="w-4 h-4 text-amber-400" data-lucide="github"></i>
+<span>GitHub</span>
+</a>
+<a class="flex items-center gap-2.5 p-3 bg-graphite-900 hover:bg-graphite-800 border border-slate-800 rounded-xl text-xs font-semibold text-white transition-colors" href="#">
+<i class="w-4 h-4 text-sky-400" data-lucide="linkedin"></i>
+<span>LinkedIn</span>
+</a>
+<a class="flex items-center gap-2.5 p-3 bg-graphite-900 hover:bg-graphite-800 border border-slate-800 rounded-xl text-xs font-semibold text-white transition-colors" href="mailto:adityargolhar@example.com">
+<i class="w-4 h-4 text-emerald-400" data-lucide="mail"></i>
+<span>Email</span>
+</a>
+<a class="flex items-center gap-2.5 p-3 bg-graphite-900 hover:bg-graphite-800 border border-slate-800 rounded-xl text-xs font-semibold text-white transition-colors" href="#">
+<i class="w-4 h-4 text-yellow-400" data-lucide="file-text"></i>
+<span>Resume</span>
+</a>
+</div>
+<!-- Warm Whimsical Tag -->
+<div class="p-3 bg-wood-900/60 border border-amber-900/40 rounded-xl text-center">
+<p class="font-hand text-xl text-amber-200">
+                "Good Ideas + Great People = Awesome Systems"
+              </p>
+</div>
+</div>
+<!-- Bottom Sleeping Dog Comfort Element -->
+<div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+<span>Studio Dog Status</span>
+<span class="text-amber-300 font-medium">Sleeping Peacefully 💤</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Education, GitHub & Contact Footer Section -->
+<!-- BEGIN: Global Bottom Bar -->
+<footer class="bg-graphite-950 border-t border-slate-800/80 py-8 text-slate-400 text-xs" data-purpose="global-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<!-- Brand & Identity -->
+<div class="flex items-center gap-3 text-center md:text-left">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center font-bold text-graphite-950 text-xs shadow-md">
+          AG
+        </div>
+<div>
+<span class="block text-sm font-bold text-white font-heading">ADITYA GOLHAR</span>
+<span class="block text-[11px] text-slate-400">Cloud Engineer | DevOps | Backend Developer</span>
+</div>
+</div>
+<!-- Footer Quick Nav -->
+<div class="flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-400">
+<a class="hover:text-amber-400 transition-colors" href="#hero">Home</a>
+<a class="hover:text-amber-400 transition-colors" href="#about">About</a>
+<a class="hover:text-amber-400 transition-colors" href="#projects">Projects</a>
+<a class="hover:text-amber-400 transition-colors" href="#cloud">Cloud</a>
+<a class="hover:text-amber-400 transition-colors" href="#journey">Journey</a>
+<a class="hover:text-amber-400 transition-colors" href="#contact">Contact</a>
+</div>
+<!-- Philosophy & Location -->
+<div class="text-center md:text-right space-y-1">
+<p class="text-slate-300 italic font-sans text-xs">"Building systems for the world beyond the screen."</p>
+<p class="text-[11px] text-slate-500 flex items-center justify-center md:justify-end gap-1">
+<i class="w-3 h-3 text-amber-400" data-lucide="map-pin"></i>
+          Surat, Gujarat, India
+        </p>
+</div>
+</div>
+</footer>
+<!-- END: Global Bottom Bar -->
+<!-- BEGIN: Lucide Icons Initializer -->
+<script data-purpose="icon-initialization">
+    // Initialize feather/lucide icons after DOM render
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+<!-- END: Lucide Icons Initializer -->
+</body></html>
